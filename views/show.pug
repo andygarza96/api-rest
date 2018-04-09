@@ -1,0 +1,24 @@
+extends layout 
+
+block content
+    table.table.table-bordered
+        tbody   
+            tr
+                th(scope='row') Title
+                td #{users.title}
+            tr
+                th(scope='row') Description
+                td #{users.description}
+            tr
+                th(scope='row') URL
+                td #{users.url}
+            tr
+                th(scope='row') Active
+                td #{users.active}
+
+    a.btn.btn-primary(href='/api/pug/', role = 'button') Volver
+
+
+
+
+            

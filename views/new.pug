@@ -1,0 +1,33 @@
+extends layout 
+
+block content 
+    h3 ¡Crea un nuevo usuario!
+
+    form(method= 'POST' action='/api/createUser')
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Nombre
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa tu usuario', name='title')
+
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Descripción
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa tu Descripcion', name='description')
+
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text URL
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa el URL', name='url')
+
+        .form-group
+            input(type='checkbox', name='active',value=true)
+            | Activo
+
+        br
+
+        button.btn.btn-primary(type='submit') Enviar
+        
+

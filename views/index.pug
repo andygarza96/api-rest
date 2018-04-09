@@ -1,0 +1,45 @@
+//hace que use eñ layout
+extends layout
+
+//llama al bloque
+block content
+    //crea la tabla
+    table.table
+        //le da estilo a la tabla
+        thead.thead-dark
+            //table row
+            tr
+                //crea las columnas
+                //table heading
+                th(scope= 'col') Title
+                th(scope='col') Description
+                th(scope='col') URL
+                th(scope='col') Activo
+                th(scope='col')
+                th(scope='col')
+                th(scope='col')
+        //table body
+        tbody
+            //ciclo
+            each val in json
+                tr  
+                    //pone los datos de la coleccion
+                    td #{val.title}
+                    td #{val.description}
+                    td #{val.url}
+                    td #{val.active}
+                    //poner los botones con las rutas
+                    td
+                        a.btn.btn-dark(href='api/show/'+val_id, role= 'button') Mostrar
+                    td
+                        a.btn.btn-warning(href='api/mod/'+val_id, role= 'button') Modificar
+                    td
+                        a.btn.btn-danger(href='api/del/'+val_id, role= 'button') Eliminar
+    a.btn.btn-primary(href='/api/newUser/', role = 'button') Nuevo
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+extends layout 
+
+block content 
+    h3 Modifica los atributos del usuario
+
+    form(method= 'POST' action='/api/updateUser'+ users._id)
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Nuevo titulo
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa tu usuario', text = user.title, name='title' )
+
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Nueva Descripción
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa tu Descripcion', text= user.descrption, name='description')
+
+        .form-group
+            .input-group.mb-3
+            .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Nuevo URL
+            input.form-control(type='text', aria-label= 'Default', aria-describeby='Ingresa el URL', text == users.url, name='url')
+
+        .form-group
+            input(type='checkbox', name='active',value=true)
+            | Activo
+
+        br
+
+        button.btn.btn-primary(type='submit') Enviar
+        
+
